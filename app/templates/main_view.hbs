@@ -1,0 +1,10 @@
+<div class="hero-unit">
+  <h1>OSCON Sessions</h1>
+  <p>Display sessions at OSCON 2013</p>
+</div>
+Filter: {{view "App.TextControl" valueNotifyBinding="App.mainController.filterText"}}
+{{#collection collectionObserveBinding="App.mainController.sessions" tag="div" collectionTag="div" filterAttribute="summary" filterTextObserveBinding="App.mainController.filterText"}}
+	<p><strong>{{content.summary}}</strong></p>
+	<em>{{content.begin}} - {{content.end}}, {{content.location}}</em>
+	<p>{{content.description}}</p>
+{{/collection}}
